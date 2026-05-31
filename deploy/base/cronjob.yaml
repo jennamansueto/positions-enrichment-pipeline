@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: enterprise-pipeline-daily
+spec:
+  schedule: "0 6 * * 1-5"  # 06:00 UTC weekdays
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: pipeline
+              image: enterprise-pipeline:latest
+              command: ["python", "-m", "enterprise_pipeline", "run", "--date", "$(date +%Y-%m-%d)"]
+              envFrom:
+                - configMapRef:
+                    name: pipeline-config
+              resources:
+                requests:
+                  memory: "4Gi"
+                  cpu: "2"
+                limits:
+                  memory: "8Gi"
+                  cpu: "4"
+          restartPolicy: OnFailure

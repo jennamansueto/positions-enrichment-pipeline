@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enterprise-pipeline
+  labels:
+    app: enterprise-pipeline
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: enterprise-pipeline
+  template:
+    metadata:
+      labels:
+        app: enterprise-pipeline
+    spec:
+      containers:
+        - name: pipeline
+          image: enterprise-pipeline:latest
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "1"
+            limits:
+              memory: "4Gi"
+              cpu: "2"
+          envFrom:
+            - configMapRef:
+                name: pipeline-config
+          volumeMounts:
+            - name: data-volume
+              mountPath: /data
+      volumes:
+        - name: data-volume
+          emptyDir:
+            sizeLimit: 10Gi

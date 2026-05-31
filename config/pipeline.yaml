@@ -1,0 +1,51 @@
+pipeline:
+  name: enterprise-positions
+  schedule: "0 6 * * *"  # Daily at 6 AM UTC
+
+sources:
+  accounting_system_alpha:
+    type: parquet
+    path: data/raw/accounting_system_alpha/
+  accounting_system_beta:
+    type: parquet
+    path: data/raw/accounting_system_beta/
+  security_master:
+    type: parquet
+    path: data/raw/security_master/
+  risk_engine:
+    type: parquet
+    path: data/raw/risk_engine/
+
+warehouse:
+  backend: delta_local  # swap to "snowflake" for production
+  delta_local:
+    path: ./data/warehouse
+  snowflake:
+    account: ${SNOWFLAKE_ACCOUNT}
+    warehouse: ${SNOWFLAKE_WAREHOUSE}
+    database: ${SNOWFLAKE_DATABASE}
+    schema: ${SNOWFLAKE_SCHEMA}
+    user: ${SNOWFLAKE_USER}
+    password: ${SNOWFLAKE_PASSWORD}
+
+medallion:
+  bronze:
+    path: ${warehouse.path}/bronze
+  silver:
+    path: ${warehouse.path}/silver
+    scd2_enabled: true
+  gold:
+    path: ${warehouse.path}/gold
+    table_name: enterprise_positions
+
+schema_evolution:
+  mode: add_only
+  audit_log: true
+
+joins:
+  - domain: security
+    join_key: security_id
+    join_type: left
+  - domain: risk_analytics
+    join_key: [security_id, as_of_date]
+    join_type: left

@@ -1,0 +1,12 @@
+services:
+  pipeline:
+    build: .
+    volumes:
+      - ./data:/data
+      - ./config:/app/config
+      - ./quality_reports:/app/quality_reports
+    environment:
+      - WAREHOUSE_PATH=/data/warehouse
+      - SPARK_MASTER=local[*]
+      - SPARK_DRIVER_MEMORY=4g
+    command: ["run", "--date", "2026-05-28"]
