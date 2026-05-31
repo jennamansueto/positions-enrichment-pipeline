@@ -163,6 +163,7 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "minimum_increment",
     "issue_size",
     "amount_outstanding",
+    "currency",
     # Geography
     "country_of_risk",
     "country_of_domicile",
