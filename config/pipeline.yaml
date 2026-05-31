@@ -47,5 +47,5 @@ joins:
     join_key: security_id
     join_type: left
   - domain: risk_analytics
-    join_key: [security_id, as_of_date]
+    join_key: [position_id, as_of_date]
     join_type: left

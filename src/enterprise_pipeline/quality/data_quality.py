@@ -85,6 +85,9 @@ def check_range(
     if column not in df.columns:
         return {"check": "range", "label": label, "column": column, "passed": True, "message": "Column not present"}
 
+    if min_val is None and max_val is None:
+        return {"check": "range", "label": label, "column": column, "passed": True, "message": "No bounds specified"}
+
     violations = df.filter(F.col(column).isNotNull())
     if min_val is not None:
         violations = violations.filter(F.col(column) < min_val)

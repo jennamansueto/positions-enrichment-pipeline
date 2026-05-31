@@ -12,7 +12,7 @@ spec:
           containers:
             - name: pipeline
               image: enterprise-pipeline:latest
-              command: ["python", "-m", "enterprise_pipeline", "run", "--date", "$(date +%Y-%m-%d)"]
+              command: ["/bin/sh", "-c", "python -m enterprise_pipeline run --date $(date +%Y-%m-%d)"]
               envFrom:
                 - configMapRef:
                     name: pipeline-config
