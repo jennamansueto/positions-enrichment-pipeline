@@ -1,9 +1,14 @@
-FROM apache/spark-py:v3.5.1
+FROM python:3.11-slim
 
-USER root
+# Install Java (required for PySpark/Spark runtime)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends openjdk-17-jre-headless && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 # Install uv for faster dependency management
-RUN pip install uv
+RUN pip install --no-cache-dir uv
 
 WORKDIR /app
 
@@ -17,7 +22,6 @@ COPY config/ config/
 COPY scripts/ scripts/
 
 ENV PYTHONPATH=/app/src
-ENV SPARK_HOME=/opt/spark
 ENV WAREHOUSE_PATH=/data/warehouse
 
 ENTRYPOINT ["python", "-m", "enterprise_pipeline"]
