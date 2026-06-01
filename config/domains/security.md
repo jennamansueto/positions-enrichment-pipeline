@@ -122,6 +122,13 @@
 | rating_outlook_sp | OUTLOOK_SP | STRING | ACTIVE | S&P rating outlook |
 | rating_outlook_moody | OUTLOOK_MOODY | STRING | ACTIVE | Moody's rating outlook |
 
+### Credit Risk
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| recovery_rate | RECOVERY_RATE | DECIMAL(8,4) | ACTIVE | Expected recovery rate (0–1); populated for corporates, null for sovereigns/munis |
+| loss_given_default | LOSS_GIVEN_DEFAULT | DECIMAL(8,4) | ACTIVE | Loss given default (1 − recovery rate); populated for corporates |
+| covenant_type | COVENANT_TYPE | STRING | ACTIVE | Covenant strength: LITE, STANDARD, TIGHT; for leveraged loan analysis |
+
 ### Structure
 | Target Field | Source Field | Type | Status | Description |
 |---|---|---|---|---|

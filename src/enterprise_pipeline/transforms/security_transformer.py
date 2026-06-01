@@ -91,6 +91,10 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "composite_rating": "string",
     "rating_outlook_sp": "string",
     "rating_outlook_moody": "string",
+    # Credit risk
+    "recovery_rate": "decimal(8,4)",
+    "loss_given_default": "decimal(8,4)",
+    "covenant_type": "string",
     # Structure
     "seniority": "string",
     "collateral_type": "string",
@@ -150,6 +154,7 @@ class SecurityTransformer(DomainTransformer):
             "coupon_type",
             "call_type",
             "seniority",
+            "covenant_type",
             "trading_status",
             "tax_status",
         ]
