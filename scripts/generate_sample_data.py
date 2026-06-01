@@ -100,6 +100,7 @@ def generate_securities() -> pd.DataFrame:
         has_sinking_fund = random.random() > 0.85
         has_esg = issue_dt > date(2022, 1, 1)
         clean_px_base = round(random.uniform(85, 115), 6)
+        recovery_rate = round(random.uniform(0.25, 0.80), 4)
 
         records.append({
             "SEC_ID": f"SEC{i:06d}",
@@ -225,8 +226,8 @@ def generate_securities() -> pd.DataFrame:
             "ROE": None,
             "EBITDA_MARGIN": None,
             "COVENANT_TYPE": random.choice(["LITE", "STANDARD", "TIGHT"]) if product == "CORPORATE" else None,
-            "RECOVERY_RATE": round(random.uniform(0.25, 0.80), 4) if product == "CORPORATE" else None,
-            "LOSS_GIVEN_DEFAULT": round(1.0 - random.uniform(0.25, 0.80), 4) if product == "CORPORATE" else None,
+            "RECOVERY_RATE": recovery_rate if product == "CORPORATE" else None,
+            "LOSS_GIVEN_DEFAULT": round(1.0 - recovery_rate, 4) if product == "CORPORATE" else None,
             "WORKOUT_DT": (maturity_dt - timedelta(days=random.randint(60, 730))) if random.random() > 0.9 else None,
             "PRIVATE_PLACEMENT": random.random() > 0.8,
             "GREEN_BOND_FLAG": random.random() > 0.85,
