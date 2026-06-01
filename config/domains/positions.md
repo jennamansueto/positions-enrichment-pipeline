@@ -116,3 +116,6 @@
 |---|---|---|---|---|---|
 | regulatory_book | REG_BOOK | REG_CLASSIFICATION | STRING | ACTIVE | Regulatory classification (TRADING/BANKING) |
 | accounting_treatment | ACCT_TREATMENT | ACCT_METHOD | STRING | ACTIVE | Accounting method (HFT, AFS, HTM) |
+| mifid_classification | MIFID_CLASS | MIFID_CLASSIFICATION | STRING | ACTIVE | MiFID II instrument classification (COMPLEX, NON_COMPLEX) |
+| cftc_reportable | CFTC_REPORTABLE | CFTC_REPORT_FLAG | BOOLEAN | ACTIVE | CFTC reportable flag |
+| reporting_jurisdiction | REPORTING_JURIS | RPT_JURISDICTION | STRING | ACTIVE | Reporting jurisdiction (US, EU, UK, APAC) |
