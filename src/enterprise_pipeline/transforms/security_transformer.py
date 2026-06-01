@@ -102,6 +102,14 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "float_index": "string",
     "float_spread": "decimal(8,4)",
     "float_reset_frequency": "string",
+    # ESG
+    "esg_score": "decimal(6,2)",
+    "environmental_score": "decimal(6,2)",
+    "social_score": "decimal(6,2)",
+    "governance_score": "decimal(6,2)",
+    "carbon_intensity": "decimal(10,2)",
+    "esg_controversy_flag": "boolean",
+    "green_bond_flag": "boolean",
     # Trading
     "exchange": "string",
     "listing_status": "string",
