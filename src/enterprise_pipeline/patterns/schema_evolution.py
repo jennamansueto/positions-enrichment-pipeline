@@ -13,6 +13,7 @@ from pyspark.sql.types import (
     DateType,
     DecimalType,
     DoubleType,
+    LongType,
     StringType,
     StructField,
     TimestampType,
@@ -36,6 +37,8 @@ def _canonical_type_to_spark(type_str: str) -> StructField:
         return StructField("", TimestampType(), True)
     if upper == "BOOLEAN":
         return StructField("", BooleanType(), True)
+    if upper == "BIGINT":
+        return StructField("", LongType(), True)
     if upper.startswith("DECIMAL"):
         import re
 
