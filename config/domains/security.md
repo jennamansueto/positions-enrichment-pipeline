@@ -78,6 +78,7 @@
 | first_put_date | FIRST_PUT_DT | DATE | ACTIVE | First put date |
 | call_price | CALL_PRICE | DECIMAL(12,6) | ACTIVE | Call price |
 | put_price | PUT_PRICE | DECIMAL(12,6) | ACTIVE | Put price |
+| make_whole_call_price | MAKE_WHOLE_CALL_PX | DECIMAL(12,6) | ACTIVE | Make-whole call price for callable bonds |
 | call_type | CALL_TYPE | STRING | ACTIVE | AMERICAN, EUROPEAN, BERMUDA |
 | is_callable | IS_CALLABLE | BOOLEAN | ACTIVE | Whether security is callable |
 | is_puttable | IS_PUTTABLE | BOOLEAN | ACTIVE | Whether security is puttable |
