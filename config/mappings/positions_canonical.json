@@ -67,6 +67,9 @@
     {"name": "updated_timestamp", "type": "TIMESTAMP", "nullable": true, "description": "Last update time", "classification": "PII_NONE", "group": "source_tracking", "lineage": "derived"},
     {"name": "is_active", "type": "BOOLEAN", "nullable": true, "description": "Whether position is active", "classification": "PII_NONE", "group": "source_tracking", "lineage": "accounting_system_alpha.alpha.positions.IS_ACTIVE"},
     {"name": "regulatory_book", "type": "STRING", "nullable": true, "description": "Regulatory classification", "classification": "PII_NONE", "group": "regulatory", "lineage": "accounting_system_alpha.alpha.positions.REG_BOOK"},
-    {"name": "accounting_treatment", "type": "STRING", "nullable": true, "description": "Accounting method (HFT, AFS, HTM)", "classification": "PII_NONE", "group": "regulatory", "lineage": "accounting_system_alpha.alpha.positions.ACCT_TREATMENT"}
+    {"name": "accounting_treatment", "type": "STRING", "nullable": true, "description": "Accounting method (HFT, AFS, HTM)", "classification": "PII_NONE", "group": "regulatory", "lineage": "accounting_system_alpha.alpha.positions.ACCT_TREATMENT"},
+    {"name": "mifid_classification", "type": "STRING", "nullable": true, "description": "MiFID II instrument classification (COMPLEX/NON_COMPLEX)", "classification": "PII_NONE", "group": "regulatory", "lineage": "accounting_system_alpha.alpha.positions.MIFID_CLASS | accounting_system_beta.beta.pos_holdings.MIFID_CLASSIFICATION"},
+    {"name": "cftc_reportable", "type": "BOOLEAN", "nullable": true, "description": "Whether position is CFTC reportable", "classification": "PII_NONE", "group": "regulatory", "lineage": "accounting_system_alpha.alpha.positions.CFTC_REPORTABLE | accounting_system_beta.beta.pos_holdings.CFTC_REPORT_FLAG"},
+    {"name": "reporting_jurisdiction", "type": "STRING", "nullable": true, "description": "Reporting jurisdiction (US, EU, UK, APAC)", "classification": "PII_NONE", "group": "regulatory", "lineage": "accounting_system_alpha.alpha.positions.REPORTING_JURIS | accounting_system_beta.beta.pos_holdings.RPT_JURISDICTION"}
   ]
 }
