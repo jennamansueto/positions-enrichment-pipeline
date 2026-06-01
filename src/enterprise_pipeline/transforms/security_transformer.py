@@ -91,6 +91,10 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "composite_rating": "string",
     "rating_outlook_sp": "string",
     "rating_outlook_moody": "string",
+    # Credit risk
+    "recovery_rate": "decimal(8,4)",
+    "loss_given_default": "decimal(8,4)",
+    "covenant_type": "string",
     # Structure
     "seniority": "string",
     "collateral_type": "string",
@@ -124,6 +128,7 @@ class SecurityTransformer(DomainTransformer):
         df = self._normalize_enums(df)
         df = self._validate_coupon_rate(df)
         df = self._validate_ratings(df)
+        df = self._validate_credit_risk_rates(df)
         df = self._select_output_columns(df)
         return df
 
@@ -150,6 +155,7 @@ class SecurityTransformer(DomainTransformer):
             "coupon_type",
             "call_type",
             "seniority",
+            "covenant_type",
             "trading_status",
             "tax_status",
         ]
@@ -183,6 +189,20 @@ class SecurityTransformer(DomainTransformer):
         for field in rating_fields:
             if field in df.columns:
                 df = df.withColumn(field, F.upper(F.trim(F.col(field))))
+        return df
+
+    @staticmethod
+    def _validate_credit_risk_rates(df: DataFrame) -> DataFrame:
+        """Ensure recovery_rate and loss_given_default are between 0 and 1."""
+        for field in ["recovery_rate", "loss_given_default"]:
+            if field in df.columns:
+                df = df.withColumn(
+                    field,
+                    F.when(
+                        (F.col(field) >= 0) & (F.col(field) <= 1),
+                        F.col(field),
+                    ).otherwise(None),
+                )
         return df
 
     @staticmethod
