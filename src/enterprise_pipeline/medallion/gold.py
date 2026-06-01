@@ -256,6 +256,11 @@ RISK_GOLD_COLUMNS: list[str] = [
     "theta",
     "vega",
     "rho",
+    "charm",
+    "vanna",
+    "volga",
+    "speed",
+    "color",
     # Scenarios
     "scenario_up_50bps",
     "scenario_down_50bps",

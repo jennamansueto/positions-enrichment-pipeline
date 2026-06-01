@@ -65,6 +65,11 @@ RISK_FIELD_TYPES: dict[str, str] = {
     "theta": "decimal(10,6)",
     "vega": "decimal(10,6)",
     "rho": "decimal(10,6)",
+    "charm": "decimal(10,6)",
+    "vanna": "decimal(10,6)",
+    "volga": "decimal(10,6)",
+    "speed": "decimal(10,6)",
+    "color": "decimal(10,6)",
     # Scenarios
     "scenario_up_50bps": "decimal(18,2)",
     "scenario_down_50bps": "decimal(18,2)",
