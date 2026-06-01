@@ -86,6 +86,11 @@ POSITIONS_FIELD_TYPES: dict[str, str] = {
     # Regulatory
     "regulatory_book": "string",
     "accounting_treatment": "string",
+    # Settlement
+    "settlement_currency": "string",
+    "failed_settlement_flag": "boolean",
+    "settlement_instruction_type": "string",
+    "settlement_location": "string",
 }
 
 # Explicit output column list — the silver table for positions contains exactly these.
@@ -128,6 +133,9 @@ class PositionsTransformer(DomainTransformer):
             "currency",
             "regulatory_book",
             "accounting_treatment",
+            "settlement_currency",
+            "settlement_instruction_type",
+            "settlement_location",
         ]
         for field in enum_fields:
             if field in df.columns:

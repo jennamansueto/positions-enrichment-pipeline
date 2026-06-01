@@ -78,6 +78,11 @@ ALPHA_COLUMN_MAP = {
     "IS_ACTIVE": "is_active",
     "REG_BOOK": "regulatory_book",
     "ACCT_TREATMENT": "accounting_treatment",
+    # Settlement
+    "SETTLE_CCY": "settlement_currency",
+    "FAILED_SETTLE_FLAG": "failed_settlement_flag",
+    "SETTLE_INSTRUCTION": "settlement_instruction_type",
+    "SETTLE_LOCATION": "settlement_location",
 }
 
 

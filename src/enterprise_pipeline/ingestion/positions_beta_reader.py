@@ -77,6 +77,11 @@ BETA_COLUMN_MAP = {
     "ACTIVE_FLAG": "is_active",
     "REG_CLASSIFICATION": "regulatory_book",
     "ACCT_METHOD": "accounting_treatment",
+    # Settlement
+    "SETTLEMENT_CCY": "settlement_currency",
+    "FAILED_SETTLE": "failed_settlement_flag",
+    "SETTLE_INSTR_TYPE": "settlement_instruction_type",
+    "SETTLE_DEPOT": "settlement_location",
 }
 
 
