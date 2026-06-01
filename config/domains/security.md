@@ -76,6 +76,7 @@
 | next_put_date | NEXT_PUT_DT | DATE | ACTIVE | Next puttable date |
 | first_call_date | FIRST_CALL_DT | DATE | ACTIVE | First call date |
 | first_put_date | FIRST_PUT_DT | DATE | ACTIVE | First put date |
+| par_call_date | PAR_CALL_DT | DATE | ACTIVE | Par call date (when issuer can call at par) |
 | call_price | CALL_PRICE | DECIMAL(12,6) | ACTIVE | Call price |
 | put_price | PUT_PRICE | DECIMAL(12,6) | ACTIVE | Put price |
 | call_type | CALL_TYPE | STRING | ACTIVE | AMERICAN, EUROPEAN, BERMUDA |
