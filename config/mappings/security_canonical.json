@@ -45,6 +45,7 @@
     {"name": "first_call_date", "type": "DATE", "nullable": true, "description": "First call date", "classification": "PII_NONE", "group": "call_put", "lineage": "security_master.sec_master.securities.FIRST_CALL_DT"},
     {"name": "first_put_date", "type": "DATE", "nullable": true, "description": "First put date", "classification": "PII_NONE", "group": "call_put", "lineage": "security_master.sec_master.securities.FIRST_PUT_DT"},
     {"name": "call_price", "type": "DECIMAL(12,6)", "nullable": true, "description": "Call price", "classification": "PII_NONE", "group": "call_put", "lineage": "security_master.sec_master.securities.CALL_PRICE"},
+    {"name": "make_whole_call_price", "type": "DECIMAL(12,6)", "nullable": true, "description": "Make-whole call price", "classification": "PII_NONE", "group": "call_put", "lineage": "security_master.sec_master.securities.MAKE_WHOLE_CALL_PX"},
     {"name": "put_price", "type": "DECIMAL(12,6)", "nullable": true, "description": "Put price", "classification": "PII_NONE", "group": "call_put", "lineage": "security_master.sec_master.securities.PUT_PRICE"},
     {"name": "call_type", "type": "STRING", "nullable": true, "description": "AMERICAN, EUROPEAN, BERMUDA", "classification": "PII_NONE", "group": "call_put", "lineage": "security_master.sec_master.securities.CALL_TYPE"},
     {"name": "is_callable", "type": "BOOLEAN", "nullable": true, "description": "Whether security is callable", "classification": "PII_NONE", "group": "call_put", "lineage": "security_master.sec_master.securities.IS_CALLABLE"},

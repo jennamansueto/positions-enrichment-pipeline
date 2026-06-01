@@ -59,6 +59,7 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "first_call_date": "date",
     "first_put_date": "date",
     "call_price": "decimal(12,6)",
+    "make_whole_call_price": "decimal(12,6)",
     "put_price": "decimal(12,6)",
     "call_type": "string",
     "is_callable": "boolean",

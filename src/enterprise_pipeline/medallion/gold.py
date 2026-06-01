@@ -149,6 +149,7 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "first_call_date",
     "first_put_date",
     "call_price",
+    "make_whole_call_price",
     "put_price",
     "call_type",
     "is_callable",

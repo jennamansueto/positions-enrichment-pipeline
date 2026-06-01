@@ -77,6 +77,7 @@
 | first_call_date | FIRST_CALL_DT | DATE | ACTIVE | First call date |
 | first_put_date | FIRST_PUT_DT | DATE | ACTIVE | First put date |
 | call_price | CALL_PRICE | DECIMAL(12,6) | ACTIVE | Call price |
+| make_whole_call_price | MAKE_WHOLE_CALL_PX | DECIMAL(12,6) | ACTIVE | Make-whole call price |
 | put_price | PUT_PRICE | DECIMAL(12,6) | ACTIVE | Put price |
 | call_type | CALL_TYPE | STRING | ACTIVE | AMERICAN, EUROPEAN, BERMUDA |
 | is_callable | IS_CALLABLE | BOOLEAN | ACTIVE | Whether security is callable |
