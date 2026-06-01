@@ -79,6 +79,7 @@
 | call_price | CALL_PRICE | DECIMAL(12,6) | ACTIVE | Call price |
 | put_price | PUT_PRICE | DECIMAL(12,6) | ACTIVE | Put price |
 | call_type | CALL_TYPE | STRING | ACTIVE | AMERICAN, EUROPEAN, BERMUDA |
+| par_call_date | PAR_CALL_DT | DATE | ACTIVE | Par call date — when issuer can call at par |
 | is_callable | IS_CALLABLE | BOOLEAN | ACTIVE | Whether security is callable |
 | is_puttable | IS_PUTTABLE | BOOLEAN | ACTIVE | Whether security is puttable |
 | is_convertible | IS_CONVERTIBLE | BOOLEAN | ACTIVE | Whether security is convertible |
