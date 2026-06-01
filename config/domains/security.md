@@ -148,6 +148,17 @@
 | settlement_type | SETTLE_TYPE | STRING | ACTIVE | Settlement type (T+1, T+2, etc.) |
 | tax_status | TAX_STATUS | STRING | ACTIVE | TAXABLE, TAX_EXEMPT |
 
+### ESG
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| esg_score | ESG_SCORE | DECIMAL(5,2) | ACTIVE | Overall ESG score (0-100) |
+| environmental_score | ENVIRONMENTAL_SCORE | DECIMAL(5,2) | ACTIVE | Environmental pillar score (0-100) |
+| social_score | SOCIAL_SCORE | DECIMAL(5,2) | ACTIVE | Social pillar score (0-100) |
+| governance_score | GOVERNANCE_SCORE | DECIMAL(5,2) | ACTIVE | Governance pillar score (0-100) |
+| carbon_intensity | CARBON_INTENSITY | DECIMAL(8,2) | ACTIVE | Carbon intensity (tCO2e/$M revenue) |
+| esg_controversy_flag | ESG_CONTROVERSY_FLAG | BOOLEAN | ACTIVE | ESG controversy indicator |
+| green_bond_flag | GREEN_BOND_FLAG | BOOLEAN | ACTIVE | Green bond indicator |
+
 ### Metadata
 | Target Field | Source Field | Type | Status | Description |
 |---|---|---|---|---|
