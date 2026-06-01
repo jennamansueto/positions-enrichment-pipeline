@@ -110,6 +110,11 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "tax_status": "string",
     # Timestamps
     "created_timestamp": "timestamp",
+    # Dividend
+    "ex_dividend_date": "date",
+    "dividend_record_date": "date",
+    "dividend_pay_date": "date",
+    "dividend_amount": "decimal(12,6)",
 }
 
 # Explicit output column list — the silver table for security contains exactly these.
@@ -124,6 +129,7 @@ class SecurityTransformer(DomainTransformer):
         df = self._normalize_enums(df)
         df = self._validate_coupon_rate(df)
         df = self._validate_ratings(df)
+        df = self._validate_dividend_amount(df)
         df = self._select_output_columns(df)
         return df
 
@@ -183,6 +189,19 @@ class SecurityTransformer(DomainTransformer):
         for field in rating_fields:
             if field in df.columns:
                 df = df.withColumn(field, F.upper(F.trim(F.col(field))))
+        return df
+
+    @staticmethod
+    def _validate_dividend_amount(df: DataFrame) -> DataFrame:
+        """Ensure dividend_amount is non-negative."""
+        if "dividend_amount" in df.columns:
+            df = df.withColumn(
+                "dividend_amount",
+                F.when(
+                    F.col("dividend_amount") >= 0,
+                    F.col("dividend_amount"),
+                ).otherwise(None),
+            )
         return df
 
     @staticmethod
