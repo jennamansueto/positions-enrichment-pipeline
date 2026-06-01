@@ -106,3 +106,11 @@
 | implied_volatility | IMPL_VOL | DECIMAL(8,4) | ACTIVE | Implied volatility (%) |
 | historical_volatility_30d | HIST_VOL_30D | DECIMAL(8,4) | ACTIVE | 30-day historical volatility (%) |
 | liquidity_score | LIQ_SCORE | DECIMAL(5,2) | ACTIVE | Internal liquidity score (0-100) |
+
+### Liquidity
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| bid_ask_spread | BID_ASK_SPREAD | DECIMAL(10,4) | ACTIVE | Bid-ask spread (bps) |
+| avg_daily_volume | AVG_DAILY_VOL | BIGINT | ACTIVE | Average daily trading volume |
+| days_to_liquidate | DAYS_TO_LIQUIDATE | DECIMAL(8,2) | ACTIVE | Estimated days to liquidate position |
+| turnover_ratio | TURNOVER_RATIO | DECIMAL(8,4) | ACTIVE | Turnover ratio |
