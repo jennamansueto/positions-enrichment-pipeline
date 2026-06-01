@@ -192,6 +192,14 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "float_index",
     "float_spread",
     "float_reset_frequency",
+    # ESG
+    "esg_score",
+    "environmental_score",
+    "social_score",
+    "governance_score",
+    "carbon_intensity",
+    "esg_controversy_flag",
+    "green_bond_flag",
     # Trading
     "exchange",
     "listing_status",
