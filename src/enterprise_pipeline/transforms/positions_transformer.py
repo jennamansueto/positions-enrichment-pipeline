@@ -76,6 +76,11 @@ POSITIONS_FIELD_TYPES: dict[str, str] = {
     "haircut_pct": "decimal(8,4)",
     "financing_rate": "decimal(8,6)",
     "financing_cost": "decimal(18,2)",
+    # Settlement
+    "settlement_currency": "string",
+    "failed_settlement_flag": "boolean",
+    "settlement_instruction": "string",
+    "settlement_location": "string",
     # Source tracking
     "source_system": "string",
     "source_record_id": "string",
@@ -128,6 +133,9 @@ class PositionsTransformer(DomainTransformer):
             "currency",
             "regulatory_book",
             "accounting_treatment",
+            "settlement_currency",
+            "settlement_instruction",
+            "settlement_location",
         ]
         for field in enum_fields:
             if field in df.columns:

@@ -86,6 +86,11 @@ POSITIONS_GOLD_COLUMNS: list[str] = [
     "haircut_pct",
     "financing_rate",
     "financing_cost",
+    # Settlement
+    "settlement_currency",
+    "failed_settlement_flag",
+    "settlement_instruction",
+    "settlement_location",
     # Source tracking
     "source_system",
     "source_record_id",

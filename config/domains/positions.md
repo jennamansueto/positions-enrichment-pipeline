@@ -79,6 +79,14 @@
 | counterparty_name | CP_NAME | CPTY_DESC | STRING | ACTIVE | Counterparty name |
 | counterparty_lei | CP_LEI | CPTY_LEI | STRING | ACTIVE | Counterparty LEI code |
 
+### Settlement
+| Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
+|---|---|---|---|---|---|
+| settlement_currency | SETTLE_CCY | SETTLEMENT_CCY | STRING | ACTIVE | Currency the trade settles in (ISO 4217) |
+| failed_settlement_flag | FAILED_SETTLE_FLAG | FAILED_SETTLE | BOOLEAN | ACTIVE | Whether the trade has failed to settle |
+| settlement_instruction | SETTLE_INSTRUCTION | SETTLE_INSTR_TYPE | STRING | ACTIVE | Settlement instruction type (DVP, FOP, DWP) |
+| settlement_location | SETTLE_LOCATION | SETTLE_DEPOT | STRING | ACTIVE | Settlement depot/location (DTC, EUROCLEAR, CLEARSTREAM, FEDWIRE) |
+
 ### Tax Lots
 | Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
 |---|---|---|---|---|---|
