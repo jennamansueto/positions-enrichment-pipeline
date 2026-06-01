@@ -88,17 +88,24 @@ class PositionsAlphaReader(SourceReader):
         self.spark = spark
         self._reader = ParquetSourceReader(spark, source_path)
 
+    # Explicit list of canonical columns this reader produces (plus source_system tag)
+    EXTRACT_COLUMNS: list[str] = [*list(ALPHA_COLUMN_MAP.values()), "source_system"]
+
     def extract(self, as_of_date: date) -> DataFrame:
         date_str = as_of_date.strftime("%Y%m%d")
         df = self._reader.read(date_str)
 
-        # Rename columns to canonical names
+        # Rename source columns to canonical target names
         for src_col, tgt_col in ALPHA_COLUMN_MAP.items():
             if src_col in df.columns:
                 df = df.withColumnRenamed(src_col, tgt_col)
 
         # Tag with source system
         df = df.withColumn("source_system", F.lit("accounting_system_alpha"))
+
+        # Explicitly select only the declared canonical columns
+        selected = [c for c in self.EXTRACT_COLUMNS if c in df.columns]
+        df = df.select(*selected)
 
         logger.info("Extracted %d rows from accounting_system_alpha for %s", df.count(), as_of_date)
         return df

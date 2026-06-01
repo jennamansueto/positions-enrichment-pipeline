@@ -79,13 +79,21 @@ class RiskReader(SourceReader):
         self.spark = spark
         self._reader = ParquetSourceReader(spark, source_path)
 
+    # Explicit list of canonical columns this reader produces
+    EXTRACT_COLUMNS: list[str] = list(RISK_COLUMN_MAP.values())
+
     def extract(self, as_of_date: date) -> DataFrame:
         date_str = as_of_date.strftime("%Y%m%d")
         df = self._reader.read(date_str)
 
+        # Rename source columns to canonical target names
         for src_col, tgt_col in RISK_COLUMN_MAP.items():
             if src_col in df.columns:
                 df = df.withColumnRenamed(src_col, tgt_col)
+
+        # Explicitly select only the declared canonical columns
+        selected = [c for c in self.EXTRACT_COLUMNS if c in df.columns]
+        df = df.select(*selected)
 
         logger.info("Extracted %d risk calculations for %s", df.count(), as_of_date)
         return df
