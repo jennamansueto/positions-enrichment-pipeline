@@ -198,6 +198,14 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "trading_status",
     "settlement_type",
     "tax_status",
+    # ESG
+    "esg_score",
+    "environmental_score",
+    "social_score",
+    "governance_score",
+    "carbon_intensity",
+    "esg_controversy_flag",
+    "green_bond_flag",
     # Timestamps
     "created_timestamp",
 ]
