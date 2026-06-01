@@ -77,6 +77,14 @@ BETA_COLUMN_MAP = {
     "ACTIVE_FLAG": "is_active",
     "REG_CLASSIFICATION": "regulatory_book",
     "ACCT_METHOD": "accounting_treatment",
+    # Performance attribution
+    "RET_CONTRIB_1D": "return_contrib_1d",
+    "RET_CONTRIB_MTD": "return_contrib_mtd",
+    "RET_CONTRIB_YTD": "return_contrib_ytd",
+    "DUR_CONTRIB": "duration_contribution",
+    "SPREAD_CONTRIB": "spread_contribution",
+    "SECTOR_ALLOC": "sector_allocation_pct",
+    "COUNTRY_ALLOC": "country_allocation_pct",
 }
 
 

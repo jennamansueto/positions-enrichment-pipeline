@@ -79,6 +79,17 @@
 | counterparty_name | CP_NAME | CPTY_DESC | STRING | ACTIVE | Counterparty name |
 | counterparty_lei | CP_LEI | CPTY_LEI | STRING | ACTIVE | Counterparty LEI code |
 
+### Performance Attribution
+| Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
+|---|---|---|---|---|---|
+| return_contrib_1d | RETURN_CONTRIB_1D | RET_CONTRIB_1D | DECIMAL(12,6) | ACTIVE | 1-day return contribution |
+| return_contrib_mtd | RETURN_CONTRIB_MTD | RET_CONTRIB_MTD | DECIMAL(12,6) | ACTIVE | Month-to-date return contribution |
+| return_contrib_ytd | RETURN_CONTRIB_YTD | RET_CONTRIB_YTD | DECIMAL(12,6) | ACTIVE | Year-to-date return contribution |
+| duration_contribution | DUR_CONTRIBUTION | DUR_CONTRIB | DECIMAL(12,6) | ACTIVE | Duration contribution to portfolio |
+| spread_contribution | SPREAD_CONTRIBUTION | SPREAD_CONTRIB | DECIMAL(12,6) | ACTIVE | Spread contribution to portfolio |
+| sector_allocation_pct | SECTOR_ALLOC_PCT | SECTOR_ALLOC | DECIMAL(8,4) | ACTIVE | Sector allocation percentage |
+| country_allocation_pct | COUNTRY_ALLOC_PCT | COUNTRY_ALLOC | DECIMAL(8,4) | ACTIVE | Country allocation percentage |
+
 ### Tax Lots
 | Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
 |---|---|---|---|---|---|
