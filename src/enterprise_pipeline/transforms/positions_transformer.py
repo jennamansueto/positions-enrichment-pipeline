@@ -86,6 +86,14 @@ POSITIONS_FIELD_TYPES: dict[str, str] = {
     # Regulatory
     "regulatory_book": "string",
     "accounting_treatment": "string",
+    # Performance attribution
+    "return_contribution_1d": "decimal(10,6)",
+    "return_contribution_mtd": "decimal(10,6)",
+    "return_contribution_ytd": "decimal(10,6)",
+    "duration_contribution": "decimal(10,6)",
+    "spread_contribution": "decimal(10,6)",
+    "sector_allocation_pct": "decimal(8,4)",
+    "country_allocation_pct": "decimal(8,4)",
 }
 
 # Explicit output column list — the silver table for positions contains exactly these.
@@ -101,6 +109,7 @@ class PositionsTransformer(DomainTransformer):
         df = self._add_derived_timestamps(df)
         df = self._validate_position_status(df)
         df = self._compute_total_pnl(df)
+        df = self._validate_allocation_pcts(df)
         df = self._select_output_columns(df)
         return df
 
@@ -163,6 +172,17 @@ class PositionsTransformer(DomainTransformer):
                 "total_pnl",
                 F.coalesce(F.col("total_pnl"), F.col("unrealized_pnl") + F.col("realized_pnl")),
             )
+        return df
+
+    @staticmethod
+    def _validate_allocation_pcts(df: DataFrame) -> DataFrame:
+        """Ensure allocation percentages are non-negative."""
+        for field in ["sector_allocation_pct", "country_allocation_pct"]:
+            if field in df.columns:
+                df = df.withColumn(
+                    field,
+                    F.when(F.col(field) >= 0, F.col(field)).otherwise(None),
+                )
         return df
 
     @staticmethod
