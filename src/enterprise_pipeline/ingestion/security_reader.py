@@ -55,6 +55,7 @@ SECURITY_COLUMN_MAP = {
     "NEXT_PUT_DT": "next_put_date",
     "FIRST_CALL_DT": "first_call_date",
     "FIRST_PUT_DT": "first_put_date",
+    "FIRST_PAR_CALL_DT": "par_call_date",
     "CALL_PRICE": "call_price",
     "PUT_PRICE": "put_price",
     "CALL_TYPE": "call_type",
