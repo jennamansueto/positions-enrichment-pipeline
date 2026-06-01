@@ -1,6 +1,11 @@
-FROM apache/spark:3.5.1-python3
+FROM python:3.11-slim-bookworm
 
-USER root
+# Java 17 is required by PySpark / Delta Lake
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends openjdk-17-jre-headless && \
+    rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
 
 # Install uv for faster dependency management
 RUN pip install uv
@@ -17,7 +22,6 @@ COPY config/ config/
 COPY scripts/ scripts/
 
 ENV PYTHONPATH=/app/src
-ENV SPARK_HOME=/opt/spark
 ENV WAREHOUSE_PATH=/data/warehouse
 
 ENTRYPOINT ["python", "-m", "enterprise_pipeline"]
