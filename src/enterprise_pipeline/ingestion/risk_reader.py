@@ -69,6 +69,10 @@ RISK_COLUMN_MAP = {
     "IMPL_VOL": "implied_volatility",
     "HIST_VOL_30D": "historical_volatility_30d",
     "LIQ_SCORE": "liquidity_score",
+    "BID_ASK_SPREAD": "bid_ask_spread",
+    "AVG_DAILY_VOL": "avg_daily_volume",
+    "DAYS_TO_LIQUIDATE": "days_to_liquidate",
+    "TURNOVER_RATIO": "turnover_ratio",
 }
 
 

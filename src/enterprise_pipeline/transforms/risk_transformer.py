@@ -76,6 +76,11 @@ RISK_FIELD_TYPES: dict[str, str] = {
     "implied_volatility": "decimal(8,4)",
     "historical_volatility_30d": "decimal(8,4)",
     "liquidity_score": "decimal(5,2)",
+    # Liquidity
+    "bid_ask_spread": "decimal(8,4)",
+    "avg_daily_volume": "bigint",
+    "days_to_liquidate": "decimal(8,2)",
+    "turnover_ratio": "decimal(8,4)",
 }
 
 # Explicit output column list — the silver table for risk analytics contains exactly these.
