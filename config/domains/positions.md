@@ -92,6 +92,17 @@
 | weight_in_portfolio | PORT_WEIGHT | PORTFOLIO_PCT | DECIMAL(8,4) | ACTIVE | Position weight in portfolio (%) |
 | weight_in_fund | FUND_WEIGHT | FUND_PCT | DECIMAL(8,4) | ACTIVE | Position weight in fund (%) |
 
+### Performance Attribution
+| Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
+|---|---|---|---|---|---|
+| return_contrib_1d | RETURN_CONTRIB_1D | RET_CONTRIB_1D | DECIMAL(10,6) | ACTIVE | 1-day return contribution |
+| return_contrib_mtd | RETURN_CONTRIB_MTD | RET_CONTRIB_MTD | DECIMAL(10,6) | ACTIVE | Month-to-date return contribution |
+| return_contrib_ytd | RETURN_CONTRIB_YTD | RET_CONTRIB_YTD | DECIMAL(10,6) | ACTIVE | Year-to-date return contribution |
+| duration_contribution | DUR_CONTRIBUTION | DUR_CONTRIB | DECIMAL(10,6) | ACTIVE | Duration contribution |
+| spread_contribution | SPREAD_CONTRIBUTION | SPREAD_CONTRIB | DECIMAL(10,6) | ACTIVE | Spread contribution |
+| sector_allocation_pct | SECTOR_ALLOC_PCT | SECTOR_ALLOC | DECIMAL(8,4) | ACTIVE | Sector allocation percentage |
+| country_allocation_pct | COUNTRY_ALLOC_PCT | COUNTRY_ALLOC | DECIMAL(8,4) | ACTIVE | Country allocation percentage |
+
 ### Margin & Collateral
 | Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
 |---|---|---|---|---|---|

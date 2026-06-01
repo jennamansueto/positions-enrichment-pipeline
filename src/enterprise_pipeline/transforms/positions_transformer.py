@@ -86,6 +86,14 @@ POSITIONS_FIELD_TYPES: dict[str, str] = {
     # Regulatory
     "regulatory_book": "string",
     "accounting_treatment": "string",
+    # Performance attribution
+    "return_contrib_1d": "decimal(10,6)",
+    "return_contrib_mtd": "decimal(10,6)",
+    "return_contrib_ytd": "decimal(10,6)",
+    "duration_contribution": "decimal(10,6)",
+    "spread_contribution": "decimal(10,6)",
+    "sector_allocation_pct": "decimal(8,4)",
+    "country_allocation_pct": "decimal(8,4)",
 }
 
 # Explicit output column list — the silver table for positions contains exactly these.
