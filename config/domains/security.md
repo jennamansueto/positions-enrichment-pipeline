@@ -139,6 +139,14 @@
 | float_spread | FLOAT_SPREAD | DECIMAL(8,4) | ACTIVE | Floating rate spread (bps) |
 | float_reset_frequency | FLOAT_RESET_FREQ | STRING | ACTIVE | Float reset frequency |
 
+### Dividend
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| ex_dividend_date | EX_DVD_DT | DATE | ACTIVE | Ex-dividend date |
+| dividend_record_date | DVD_RECORD_DT | DATE | ACTIVE | Dividend record date |
+| dividend_pay_date | DVD_PAY_DT | DATE | ACTIVE | Dividend payment date |
+| dividend_amount | DVD_AMT | DECIMAL(18,6) | ACTIVE | Dividend amount per share |
+
 ### Trading
 | Target Field | Source Field | Type | Status | Description |
 |---|---|---|---|---|

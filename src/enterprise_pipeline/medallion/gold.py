@@ -192,6 +192,11 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "float_index",
     "float_spread",
     "float_reset_frequency",
+    # Dividend
+    "ex_dividend_date",
+    "dividend_record_date",
+    "dividend_pay_date",
+    "dividend_amount",
     # Trading
     "exchange",
     "listing_status",

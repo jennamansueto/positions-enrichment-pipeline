@@ -102,6 +102,11 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "float_index": "string",
     "float_spread": "decimal(8,4)",
     "float_reset_frequency": "string",
+    # Dividend
+    "ex_dividend_date": "date",
+    "dividend_record_date": "date",
+    "dividend_pay_date": "date",
+    "dividend_amount": "decimal(18,6)",
     # Trading
     "exchange": "string",
     "listing_status": "string",

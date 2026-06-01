@@ -98,6 +98,10 @@ SECURITY_COLUMN_MAP = {
     "TRADING_STATUS": "trading_status",
     "SETTLE_TYPE": "settlement_type",
     "TAX_STATUS": "tax_status",
+    "EX_DVD_DT": "ex_dividend_date",
+    "DVD_RECORD_DT": "dividend_record_date",
+    "DVD_PAY_DT": "dividend_pay_date",
+    "DVD_AMT": "dividend_amount",
     "CREATED_TS": "created_timestamp",
 }
 
