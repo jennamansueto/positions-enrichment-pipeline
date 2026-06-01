@@ -207,10 +207,18 @@ def generate_securities() -> pd.DataFrame:
             "HIGH_52W": round(clean_px_base * random.uniform(1.02, 1.15), 6),
             "LOW_52W": round(clean_px_base * random.uniform(0.85, 0.98), 6),
             "AVG_VOL_30D": random.randint(50000, 50000000),
-            "EX_DVD_DT": None,
-            "DVD_RECORD_DT": None,
-            "DVD_PAY_DT": None,
-            "DVD_AMT": None,
+            "EX_DVD_DT": (
+                BUSINESS_DATES[0] + timedelta(days=random.randint(1, 90))
+            ) if random.random() > 0.4 else None,
+            "DVD_RECORD_DT": (
+                BUSINESS_DATES[0] + timedelta(days=random.randint(3, 92))
+            ) if random.random() > 0.4 else None,
+            "DVD_PAY_DT": (
+                BUSINESS_DATES[0] + timedelta(days=random.randint(14, 120))
+            ) if random.random() > 0.4 else None,
+            "DVD_AMT": (
+                round(random.uniform(0.10, 5.00), 6)
+            ) if random.random() > 0.4 else None,
             "SPLIT_FACTOR": None,
             "LAST_SPLIT_DT": None,
             "LEI": "".join(random.choices(string.ascii_uppercase + string.digits, k=20)),

@@ -108,6 +108,11 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "trading_status": "string",
     "settlement_type": "string",
     "tax_status": "string",
+    # Dividend
+    "ex_dividend_date": "date",
+    "dividend_record_date": "date",
+    "dividend_pay_date": "date",
+    "dividend_amount": "decimal(18,6)",
     # Timestamps
     "created_timestamp": "timestamp",
 }
