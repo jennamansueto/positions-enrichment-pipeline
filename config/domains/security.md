@@ -85,6 +85,7 @@
 | is_perpetual | IS_PERPETUAL | BOOLEAN | ACTIVE | Whether security is perpetual |
 | is_144a | IS_144A | BOOLEAN | ACTIVE | Rule 144A private placement |
 | is_reg_s | IS_REG_S | BOOLEAN | ACTIVE | Reg S eligible |
+| make_whole_call_price | MAKE_WHOLE_CALL_PX | DECIMAL(12,6) | ACTIVE | Make-whole call price |
 
 ### Sizing
 | Target Field | Source Field | Type | Status | Description |

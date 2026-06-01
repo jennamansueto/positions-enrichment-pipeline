@@ -64,6 +64,7 @@ SECURITY_COLUMN_MAP = {
     "IS_PERPETUAL": "is_perpetual",
     "IS_144A": "is_144a",
     "IS_REG_S": "is_reg_s",
+    "MAKE_WHOLE_CALL_PX": "make_whole_call_price",
     "PAR_VALUE": "par_value",
     "MIN_DENOM": "minimum_denomination",
     "MIN_INCR": "minimum_increment",

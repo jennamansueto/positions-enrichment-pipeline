@@ -157,6 +157,7 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "is_perpetual",
     "is_144a",
     "is_reg_s",
+    "make_whole_call_price",
     # Sizing
     "par_value",
     "minimum_denomination",

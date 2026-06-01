@@ -67,6 +67,7 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "is_perpetual": "boolean",
     "is_144a": "boolean",
     "is_reg_s": "boolean",
+    "make_whole_call_price": "decimal(12,6)",
     # Sizing
     "par_value": "decimal(18,2)",
     "minimum_denomination": "decimal(18,2)",
