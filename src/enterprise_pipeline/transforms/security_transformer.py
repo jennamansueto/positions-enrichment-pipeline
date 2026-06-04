@@ -102,6 +102,14 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "float_index": "string",
     "float_spread": "decimal(8,4)",
     "float_reset_frequency": "string",
+    # Fundamentals
+    "pe_ratio": "decimal(10,4)",
+    "earnings_per_share": "decimal(10,4)",
+    "book_value_per_share": "decimal(10,4)",
+    "revenue_per_share": "decimal(10,4)",
+    "debt_to_equity": "decimal(10,4)",
+    "return_on_equity": "decimal(10,4)",
+    "ebitda_margin": "decimal(10,4)",
     # Trading
     "exchange": "string",
     "listing_status": "string",
