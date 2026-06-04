@@ -89,6 +89,11 @@
 | theta | THETA | DECIMAL(10,6) | ACTIVE | Option theta |
 | vega | VEGA | DECIMAL(10,6) | ACTIVE | Option vega |
 | rho | RHO | DECIMAL(10,6) | ACTIVE | Option rho |
+| charm | CHARM | DECIMAL(10,6) | ACTIVE | Charm (DdeltaDtime) — delta decay |
+| vanna | VANNA | DECIMAL(10,6) | ACTIVE | Vanna (DdeltaDvol) — delta-vol cross |
+| volga | VOLGA | DECIMAL(10,6) | ACTIVE | Volga (DvegaDvol) — vega convexity |
+| speed | SPEED | DECIMAL(10,6) | ACTIVE | Speed (DgammaDspot) — gamma sensitivity to spot |
+| color | COLOR | DECIMAL(10,6) | ACTIVE | Color (DgammaDtime) — gamma decay |
 
 ### Scenario Analysis
 | Target Field | Source Field | Type | Status | Description |
