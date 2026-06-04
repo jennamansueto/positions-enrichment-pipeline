@@ -102,6 +102,11 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "float_index": "string",
     "float_spread": "decimal(8,4)",
     "float_reset_frequency": "string",
+    # ESG
+    "esg_score": "decimal(5,2)",
+    "esg_environmental": "decimal(5,2)",
+    "esg_social": "decimal(5,2)",
+    "esg_governance": "decimal(5,2)",
     # Trading
     "exchange": "string",
     "listing_status": "string",
@@ -124,6 +129,7 @@ class SecurityTransformer(DomainTransformer):
         df = self._normalize_enums(df)
         df = self._validate_coupon_rate(df)
         df = self._validate_ratings(df)
+        df = self._validate_esg_scores(df)
         df = self._select_output_columns(df)
         return df
 
@@ -169,6 +175,20 @@ class SecurityTransformer(DomainTransformer):
                     F.col("coupon_rate"),
                 ).otherwise(None),
             )
+        return df
+
+    @staticmethod
+    def _validate_esg_scores(df: DataFrame) -> DataFrame:
+        """Ensure ESG scores are between 0 and 100."""
+        for field in ["esg_score", "esg_environmental", "esg_social", "esg_governance"]:
+            if field in df.columns:
+                df = df.withColumn(
+                    field,
+                    F.when(
+                        (F.col(field) >= 0) & (F.col(field) <= 100),
+                        F.col(field),
+                    ).otherwise(None),
+                )
         return df
 
     @staticmethod
