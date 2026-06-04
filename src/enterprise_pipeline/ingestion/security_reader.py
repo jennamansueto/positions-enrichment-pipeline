@@ -98,6 +98,13 @@ SECURITY_COLUMN_MAP = {
     "TRADING_STATUS": "trading_status",
     "SETTLE_TYPE": "settlement_type",
     "TAX_STATUS": "tax_status",
+    # Dividends & corporate actions
+    "EX_DVD_DT": "ex_dividend_date",
+    "DVD_RECORD_DT": "dividend_record_date",
+    "DVD_PAY_DT": "dividend_payment_date",
+    "DVD_AMT": "dividend_amount",
+    "SPLIT_FACTOR": "stock_split_factor",
+    "LAST_SPLIT_DT": "last_split_date",
     "CREATED_TS": "created_timestamp",
 }
 

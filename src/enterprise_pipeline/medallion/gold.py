@@ -198,6 +198,13 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "trading_status",
     "settlement_type",
     "tax_status",
+    # Dividends & corporate actions
+    "ex_dividend_date",
+    "dividend_record_date",
+    "dividend_payment_date",
+    "dividend_amount",
+    "stock_split_factor",
+    "last_split_date",
     # Timestamps
     "created_timestamp",
 ]
