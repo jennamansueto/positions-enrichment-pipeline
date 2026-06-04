@@ -37,6 +37,10 @@ POSITIONS_FIELD_TYPES: dict[str, str] = {
     "daily_pnl": "decimal(18,2)",
     "mtd_pnl": "decimal(18,2)",
     "ytd_pnl": "decimal(18,2)",
+    # Return contributions
+    "return_contribution_1d": "decimal(10,6)",
+    "return_contribution_mtd": "decimal(10,6)",
+    "return_contribution_ytd": "decimal(10,6)",
     # Dates
     "trade_date": "date",
     "settle_date": "date",

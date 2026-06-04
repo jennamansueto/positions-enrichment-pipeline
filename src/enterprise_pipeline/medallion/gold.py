@@ -47,6 +47,10 @@ POSITIONS_GOLD_COLUMNS: list[str] = [
     "daily_pnl",
     "mtd_pnl",
     "ytd_pnl",
+    # Return contributions
+    "return_contribution_1d",
+    "return_contribution_mtd",
+    "return_contribution_ytd",
     # Dates
     "trade_date",
     "settle_date",
