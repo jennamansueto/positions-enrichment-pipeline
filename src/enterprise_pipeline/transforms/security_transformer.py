@@ -108,6 +108,13 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "trading_status": "string",
     "settlement_type": "string",
     "tax_status": "string",
+    # Dividends & corporate actions
+    "ex_dividend_date": "date",
+    "dividend_record_date": "date",
+    "dividend_payment_date": "date",
+    "dividend_amount": "decimal(18,6)",
+    "stock_split_factor": "decimal(12,6)",
+    "last_split_date": "date",
     # Timestamps
     "created_timestamp": "timestamp",
 }
@@ -124,6 +131,7 @@ class SecurityTransformer(DomainTransformer):
         df = self._normalize_enums(df)
         df = self._validate_coupon_rate(df)
         df = self._validate_ratings(df)
+        df = self._validate_dividend_corporate_actions(df)
         df = self._select_output_columns(df)
         return df
 
@@ -183,6 +191,20 @@ class SecurityTransformer(DomainTransformer):
         for field in rating_fields:
             if field in df.columns:
                 df = df.withColumn(field, F.upper(F.trim(F.col(field))))
+        return df
+
+    @staticmethod
+    def _validate_dividend_corporate_actions(df: DataFrame) -> DataFrame:
+        """Ensure dividend_amount and stock_split_factor are non-negative."""
+        for field in ["dividend_amount", "stock_split_factor"]:
+            if field in df.columns:
+                df = df.withColumn(
+                    field,
+                    F.when(
+                        F.col(field) >= 0,
+                        F.col(field),
+                    ).otherwise(None),
+                )
         return df
 
     @staticmethod
