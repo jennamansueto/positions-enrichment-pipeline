@@ -41,6 +41,13 @@
 | mtd_pnl | MTD_PNL | MTD_GL | DECIMAL(18,2) | ACTIVE | Month-to-date P&L |
 | ytd_pnl | YTD_PNL | YTD_GL | DECIMAL(18,2) | ACTIVE | Year-to-date P&L |
 
+### Return Contributions
+| Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
+|---|---|---|---|---|---|
+| return_contribution_1d | RETURN_CONTRIB_1D | RET_CONTRIB_1D | DECIMAL(10,6) | ACTIVE | 1-day return contribution |
+| return_contribution_mtd | RETURN_CONTRIB_MTD | RET_CONTRIB_MTD | DECIMAL(10,6) | ACTIVE | Month-to-date return contribution |
+| return_contribution_ytd | RETURN_CONTRIB_YTD | RET_CONTRIB_YTD | DECIMAL(10,6) | ACTIVE | Year-to-date return contribution |
+
 ### Dates
 | Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
 |---|---|---|---|---|---|
