@@ -267,6 +267,11 @@ RISK_GOLD_COLUMNS: list[str] = [
     "implied_volatility",
     "historical_volatility_30d",
     "liquidity_score",
+    # Liquidity
+    "bid_ask_spread",
+    "avg_daily_volume",
+    "days_to_liquidate",
+    "turnover_ratio",
 ]
 
 # Maps each join domain to its explicit gold column list.
