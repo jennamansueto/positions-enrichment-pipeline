@@ -86,6 +86,10 @@ POSITIONS_GOLD_COLUMNS: list[str] = [
     "haircut_pct",
     "financing_rate",
     "financing_cost",
+    # Return contributions
+    "return_contribution_1d",
+    "return_contribution_mtd",
+    "return_contribution_ytd",
     # Source tracking
     "source_system",
     "source_record_id",

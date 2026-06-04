@@ -101,6 +101,13 @@
 | financing_rate | FIN_RATE | FINANCING_RT | DECIMAL(8,6) | ACTIVE | Financing/repo rate |
 | financing_cost | FIN_COST | FINANCING_AMT | DECIMAL(18,2) | ACTIVE | Financing cost |
 
+### Return Contributions
+| Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
+|---|---|---|---|---|---|
+| return_contribution_1d | RETURN_CONTRIB_1D | RET_CONTRIB_1D | DECIMAL(12,6) | ACTIVE | 1-day return contribution |
+| return_contribution_mtd | RETURN_CONTRIB_MTD | RET_CONTRIB_MTD | DECIMAL(12,6) | ACTIVE | Month-to-date return contribution |
+| return_contribution_ytd | RETURN_CONTRIB_YTD | RET_CONTRIB_YTD | DECIMAL(12,6) | ACTIVE | Year-to-date return contribution |
+
 ### Source Tracking
 | Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
 |---|---|---|---|---|---|
