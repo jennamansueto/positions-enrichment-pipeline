@@ -108,6 +108,10 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "trading_status": "string",
     "settlement_type": "string",
     "tax_status": "string",
+    # ESG
+    "esg_score": "decimal(8,2)",
+    "carbon_intensity": "decimal(10,2)",
+    "esg_controversy_flag": "boolean",
     # Timestamps
     "created_timestamp": "timestamp",
 }
@@ -124,6 +128,7 @@ class SecurityTransformer(DomainTransformer):
         df = self._normalize_enums(df)
         df = self._validate_coupon_rate(df)
         df = self._validate_ratings(df)
+        df = self._validate_esg_fields(df)
         df = self._select_output_columns(df)
         return df
 
@@ -183,6 +188,27 @@ class SecurityTransformer(DomainTransformer):
         for field in rating_fields:
             if field in df.columns:
                 df = df.withColumn(field, F.upper(F.trim(F.col(field))))
+        return df
+
+    @staticmethod
+    def _validate_esg_fields(df: DataFrame) -> DataFrame:
+        """Ensure esg_score is between 0 and 100, carbon_intensity is non-negative."""
+        if "esg_score" in df.columns:
+            df = df.withColumn(
+                "esg_score",
+                F.when(
+                    (F.col("esg_score") >= 0) & (F.col("esg_score") <= 100),
+                    F.col("esg_score"),
+                ).otherwise(None),
+            )
+        if "carbon_intensity" in df.columns:
+            df = df.withColumn(
+                "carbon_intensity",
+                F.when(
+                    F.col("carbon_intensity") >= 0,
+                    F.col("carbon_intensity"),
+                ).otherwise(None),
+            )
         return df
 
     @staticmethod
