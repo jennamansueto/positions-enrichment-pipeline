@@ -76,6 +76,10 @@ POSITIONS_FIELD_TYPES: dict[str, str] = {
     "haircut_pct": "decimal(8,4)",
     "financing_rate": "decimal(8,6)",
     "financing_cost": "decimal(18,2)",
+    # Return contributions
+    "return_contribution_1d": "decimal(12,6)",
+    "return_contribution_mtd": "decimal(12,6)",
+    "return_contribution_ytd": "decimal(12,6)",
     # Source tracking
     "source_system": "string",
     "source_record_id": "string",
