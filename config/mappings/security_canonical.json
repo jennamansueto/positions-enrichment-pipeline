@@ -87,6 +87,13 @@
     {"name": "trading_status", "type": "STRING", "nullable": true, "description": "ACTIVE, SUSPENDED, DELISTED", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.TRADING_STATUS"},
     {"name": "settlement_type", "type": "STRING", "nullable": true, "description": "Settlement type", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.SETTLE_TYPE"},
     {"name": "tax_status", "type": "STRING", "nullable": true, "description": "TAXABLE, TAX_EXEMPT", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.TAX_STATUS"},
-    {"name": "created_timestamp", "type": "TIMESTAMP", "nullable": true, "description": "Record creation time", "classification": "PII_NONE", "group": "metadata", "lineage": "security_master.sec_master.securities.CREATED_TS"}
+    {"name": "created_timestamp", "type": "TIMESTAMP", "nullable": true, "description": "Record creation time", "classification": "PII_NONE", "group": "metadata", "lineage": "security_master.sec_master.securities.CREATED_TS"},
+    {"name": "esg_score", "type": "DECIMAL(5,2)", "nullable": true, "description": "Overall ESG score (0-100)", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.ESG_SCORE"},
+    {"name": "environmental_score", "type": "DECIMAL(5,2)", "nullable": true, "description": "Environmental pillar score (0-100)", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.ENVIRONMENTAL_SCORE"},
+    {"name": "social_score", "type": "DECIMAL(5,2)", "nullable": true, "description": "Social pillar score (0-100)", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.SOCIAL_SCORE"},
+    {"name": "governance_score", "type": "DECIMAL(5,2)", "nullable": true, "description": "Governance pillar score (0-100)", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.GOVERNANCE_SCORE"},
+    {"name": "carbon_intensity", "type": "DECIMAL(10,2)", "nullable": true, "description": "Carbon intensity (tCO2e per unit revenue)", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.CARBON_INTENSITY"},
+    {"name": "esg_controversy_flag", "type": "BOOLEAN", "nullable": true, "description": "Whether security has ESG controversy", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.ESG_CONTROVERSY_FLAG"},
+    {"name": "green_bond_flag", "type": "BOOLEAN", "nullable": true, "description": "Whether security is a green bond", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.GREEN_BOND_FLAG"}
   ]
 }

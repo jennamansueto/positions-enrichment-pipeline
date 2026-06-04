@@ -99,6 +99,14 @@ SECURITY_COLUMN_MAP = {
     "SETTLE_TYPE": "settlement_type",
     "TAX_STATUS": "tax_status",
     "CREATED_TS": "created_timestamp",
+    # ESG
+    "ESG_SCORE": "esg_score",
+    "ENVIRONMENTAL_SCORE": "environmental_score",
+    "SOCIAL_SCORE": "social_score",
+    "GOVERNANCE_SCORE": "governance_score",
+    "CARBON_INTENSITY": "carbon_intensity",
+    "ESG_CONTROVERSY_FLAG": "esg_controversy_flag",
+    "GREEN_BOND_FLAG": "green_bond_flag",
 }
 
 
