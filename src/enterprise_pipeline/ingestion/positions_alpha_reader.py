@@ -78,6 +78,9 @@ ALPHA_COLUMN_MAP = {
     "IS_ACTIVE": "is_active",
     "REG_BOOK": "regulatory_book",
     "ACCT_TREATMENT": "accounting_treatment",
+    "MIFID_CLASS": "mifid_classification",
+    "CFTC_REPORTABLE": "cftc_reportable",
+    "REPORTING_JURIS": "reporting_jurisdiction",
 }
 
 

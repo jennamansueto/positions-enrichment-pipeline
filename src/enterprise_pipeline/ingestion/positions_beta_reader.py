@@ -77,6 +77,9 @@ BETA_COLUMN_MAP = {
     "ACTIVE_FLAG": "is_active",
     "REG_CLASSIFICATION": "regulatory_book",
     "ACCT_METHOD": "accounting_treatment",
+    "MIFID_CLASSIFICATION": "mifid_classification",
+    "CFTC_REPORT_FLAG": "cftc_reportable",
+    "RPT_JURISDICTION": "reporting_jurisdiction",
 }
 
 

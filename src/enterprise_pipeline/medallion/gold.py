@@ -96,6 +96,9 @@ POSITIONS_GOLD_COLUMNS: list[str] = [
     # Regulatory
     "regulatory_book",
     "accounting_treatment",
+    "mifid_classification",
+    "cftc_reportable",
+    "reporting_jurisdiction",
 ]
 
 # Columns from the security silver table included in the gold output.
