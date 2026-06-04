@@ -139,6 +139,14 @@
 | float_spread | FLOAT_SPREAD | DECIMAL(8,4) | ACTIVE | Floating rate spread (bps) |
 | float_reset_frequency | FLOAT_RESET_FREQ | STRING | ACTIVE | Float reset frequency |
 
+### ESG
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| esg_score | ESG_SCORE | DECIMAL(5,2) | ACTIVE | Composite ESG score (0-100) |
+| esg_environmental | ENVIRONMENTAL_SCORE | DECIMAL(5,2) | ACTIVE | Environmental pillar score (0-100) |
+| esg_social | SOCIAL_SCORE | DECIMAL(5,2) | ACTIVE | Social pillar score (0-100) |
+| esg_governance | GOVERNANCE_SCORE | DECIMAL(5,2) | ACTIVE | Governance pillar score (0-100) |
+
 ### Trading
 | Target Field | Source Field | Type | Status | Description |
 |---|---|---|---|---|

@@ -93,6 +93,11 @@ SECURITY_COLUMN_MAP = {
     "FLOAT_IDX": "float_index",
     "FLOAT_SPREAD": "float_spread",
     "FLOAT_RESET_FREQ": "float_reset_frequency",
+    # ESG
+    "ESG_SCORE": "esg_score",
+    "ENVIRONMENTAL_SCORE": "esg_environmental",
+    "SOCIAL_SCORE": "esg_social",
+    "GOVERNANCE_SCORE": "esg_governance",
     "EXCHANGE": "exchange",
     "LISTING_STATUS": "listing_status",
     "TRADING_STATUS": "trading_status",
