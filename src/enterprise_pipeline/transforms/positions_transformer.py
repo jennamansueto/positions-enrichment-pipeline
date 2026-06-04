@@ -86,6 +86,13 @@ POSITIONS_FIELD_TYPES: dict[str, str] = {
     # Regulatory
     "regulatory_book": "string",
     "accounting_treatment": "string",
+    # Settlement & Reconciliation
+    "settlement_currency": "string",
+    "settlement_fx_rate": "decimal(12,6)",
+    "failed_settlement_flag": "boolean",
+    "reconciliation_status": "string",
+    "last_reconciliation_date": "date",
+    "days_since_trade": "bigint",
 }
 
 # Explicit output column list — the silver table for positions contains exactly these.
@@ -101,6 +108,7 @@ class PositionsTransformer(DomainTransformer):
         df = self._add_derived_timestamps(df)
         df = self._validate_position_status(df)
         df = self._compute_total_pnl(df)
+        df = self._validate_settlement_fields(df)
         df = self._select_output_columns(df)
         return df
 
@@ -128,6 +136,8 @@ class PositionsTransformer(DomainTransformer):
             "currency",
             "regulatory_book",
             "accounting_treatment",
+            "settlement_currency",
+            "reconciliation_status",
         ]
         for field in enum_fields:
             if field in df.columns:
@@ -163,6 +173,17 @@ class PositionsTransformer(DomainTransformer):
                 "total_pnl",
                 F.coalesce(F.col("total_pnl"), F.col("unrealized_pnl") + F.col("realized_pnl")),
             )
+        return df
+
+    @staticmethod
+    def _validate_settlement_fields(df: DataFrame) -> DataFrame:
+        """Ensure settlement_fx_rate and days_since_trade are non-negative."""
+        for field in ["settlement_fx_rate", "days_since_trade"]:
+            if field in df.columns:
+                df = df.withColumn(
+                    field,
+                    F.when(F.col(field) >= 0, F.col(field)).otherwise(None),
+                )
         return df
 
     @staticmethod

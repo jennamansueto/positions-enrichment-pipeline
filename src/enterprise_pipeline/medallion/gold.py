@@ -96,6 +96,13 @@ POSITIONS_GOLD_COLUMNS: list[str] = [
     # Regulatory
     "regulatory_book",
     "accounting_treatment",
+    # Settlement & Reconciliation
+    "settlement_currency",
+    "settlement_fx_rate",
+    "failed_settlement_flag",
+    "reconciliation_status",
+    "last_reconciliation_date",
+    "days_since_trade",
 ]
 
 # Columns from the security silver table included in the gold output.

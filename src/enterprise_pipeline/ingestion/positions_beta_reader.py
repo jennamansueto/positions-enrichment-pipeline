@@ -77,6 +77,13 @@ BETA_COLUMN_MAP = {
     "ACTIVE_FLAG": "is_active",
     "REG_CLASSIFICATION": "regulatory_book",
     "ACCT_METHOD": "accounting_treatment",
+    # Settlement & Reconciliation
+    "SETTLEMENT_CCY": "settlement_currency",
+    "SETTLEMENT_FX": "settlement_fx_rate",
+    "FAILED_SETTLE": "failed_settlement_flag",
+    "RECONCILIATION_STATUS": "reconciliation_status",
+    "LAST_RECON_DATE": "last_reconciliation_date",
+    "DAYS_SINCE_TRADE": "days_since_trade",
 }
 
 
