@@ -57,6 +57,10 @@
     {"name": "scenario_credit_widen_100bps", "type": "DECIMAL(18,2)", "nullable": true, "description": "P&L impact: credit spreads +100bps", "classification": "PII_NONE", "group": "scenarios", "lineage": "risk_engine.risk.calculations.SCEN_CRD_100"},
     {"name": "implied_volatility", "type": "DECIMAL(8,4)", "nullable": true, "description": "Implied volatility (%)", "classification": "PII_NONE", "group": "volatility", "lineage": "risk_engine.risk.calculations.IMPL_VOL"},
     {"name": "historical_volatility_30d", "type": "DECIMAL(8,4)", "nullable": true, "description": "30-day historical volatility (%)", "classification": "PII_NONE", "group": "volatility", "lineage": "risk_engine.risk.calculations.HIST_VOL_30D"},
-    {"name": "liquidity_score", "type": "DECIMAL(5,2)", "nullable": true, "description": "Internal liquidity score (0-100)", "classification": "PII_NONE", "group": "volatility", "lineage": "risk_engine.risk.calculations.LIQ_SCORE"}
+    {"name": "liquidity_score", "type": "DECIMAL(5,2)", "nullable": true, "description": "Internal liquidity score (0-100)", "classification": "PII_NONE", "group": "volatility", "lineage": "risk_engine.risk.calculations.LIQ_SCORE"},
+    {"name": "bid_ask_spread", "type": "DECIMAL(8,4)", "nullable": true, "description": "Bid-ask spread", "classification": "PII_NONE", "group": "liquidity", "lineage": "risk_engine.risk.calculations.BID_ASK_SPREAD"},
+    {"name": "avg_daily_volume", "type": "BIGINT", "nullable": true, "description": "Average daily trading volume", "classification": "PII_NONE", "group": "liquidity", "lineage": "risk_engine.risk.calculations.AVG_DAILY_VOL"},
+    {"name": "days_to_liquidate", "type": "DECIMAL(8,2)", "nullable": true, "description": "Estimated days to liquidate position", "classification": "PII_NONE", "group": "liquidity", "lineage": "risk_engine.risk.calculations.DAYS_TO_LIQUIDATE"},
+    {"name": "turnover_ratio", "type": "DECIMAL(8,4)", "nullable": true, "description": "Turnover ratio", "classification": "PII_NONE", "group": "liquidity", "lineage": "risk_engine.risk.calculations.TURNOVER_RATIO"}
   ]
 }
