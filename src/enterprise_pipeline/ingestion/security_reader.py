@@ -98,6 +98,14 @@ SECURITY_COLUMN_MAP = {
     "TRADING_STATUS": "trading_status",
     "SETTLE_TYPE": "settlement_type",
     "TAX_STATUS": "tax_status",
+    # Fundamentals
+    "PE_RATIO": "pe_ratio",
+    "EPS": "earnings_per_share",
+    "BOOK_VAL_PER_SH": "book_value_per_share",
+    "REV_PER_SH": "revenue_per_share",
+    "DEBT_TO_EQUITY": "debt_to_equity",
+    "ROE": "return_on_equity",
+    "EBITDA_MARGIN": "ebitda_margin",
     "CREATED_TS": "created_timestamp",
 }
 

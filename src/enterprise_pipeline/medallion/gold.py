@@ -192,6 +192,14 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "float_index",
     "float_spread",
     "float_reset_frequency",
+    # Fundamentals
+    "pe_ratio",
+    "earnings_per_share",
+    "book_value_per_share",
+    "revenue_per_share",
+    "debt_to_equity",
+    "return_on_equity",
+    "ebitda_margin",
     # Trading
     "exchange",
     "listing_status",

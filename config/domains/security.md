@@ -139,6 +139,17 @@
 | float_spread | FLOAT_SPREAD | DECIMAL(8,4) | ACTIVE | Floating rate spread (bps) |
 | float_reset_frequency | FLOAT_RESET_FREQ | STRING | ACTIVE | Float reset frequency |
 
+### Fundamentals
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| pe_ratio | PE_RATIO | DECIMAL(10,4) | ACTIVE | Price-to-earnings ratio |
+| earnings_per_share | EPS | DECIMAL(10,4) | ACTIVE | Earnings per share |
+| book_value_per_share | BOOK_VAL_PER_SH | DECIMAL(10,4) | ACTIVE | Book value per share |
+| revenue_per_share | REV_PER_SH | DECIMAL(10,4) | ACTIVE | Revenue per share |
+| debt_to_equity | DEBT_TO_EQUITY | DECIMAL(10,4) | ACTIVE | Debt-to-equity ratio |
+| return_on_equity | ROE | DECIMAL(10,4) | ACTIVE | Return on equity |
+| ebitda_margin | EBITDA_MARGIN | DECIMAL(10,4) | ACTIVE | EBITDA margin |
+
 ### Trading
 | Target Field | Source Field | Type | Status | Description |
 |---|---|---|---|---|
