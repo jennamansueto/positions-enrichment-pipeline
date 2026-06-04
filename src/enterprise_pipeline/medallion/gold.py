@@ -181,6 +181,10 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "composite_rating",
     "rating_outlook_sp",
     "rating_outlook_moody",
+    # Credit risk
+    "recovery_rate",
+    "loss_given_default",
+    "covenant_type",
     # Structure
     "seniority",
     "collateral_type",
