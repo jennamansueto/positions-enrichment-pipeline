@@ -72,6 +72,13 @@ RISK_FIELD_TYPES: dict[str, str] = {
     "scenario_down_100bps": "decimal(18,2)",
     "scenario_up_200bps": "decimal(18,2)",
     "scenario_credit_widen_100bps": "decimal(18,2)",
+    "scenario_down_200bps": "decimal(18,2)",
+    "scenario_up_300bps": "decimal(18,2)",
+    "scenario_equity_down_10pct": "decimal(18,2)",
+    "scenario_equity_down_20pct": "decimal(18,2)",
+    "scenario_credit_tight_50bps": "decimal(18,2)",
+    "scenario_vol_up_25pct": "decimal(18,2)",
+    "scenario_fx_shock_10pct": "decimal(18,2)",
     # Volatility
     "implied_volatility": "decimal(8,4)",
     "historical_volatility_30d": "decimal(8,4)",
