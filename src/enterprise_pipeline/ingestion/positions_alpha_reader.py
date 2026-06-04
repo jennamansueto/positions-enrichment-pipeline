@@ -78,6 +78,13 @@ ALPHA_COLUMN_MAP = {
     "IS_ACTIVE": "is_active",
     "REG_BOOK": "regulatory_book",
     "ACCT_TREATMENT": "accounting_treatment",
+    "RETURN_CONTRIB_1D": "return_contribution_1d",
+    "RETURN_CONTRIB_MTD": "return_contribution_mtd",
+    "RETURN_CONTRIB_YTD": "return_contribution_ytd",
+    "DUR_CONTRIBUTION": "duration_contribution",
+    "SPREAD_CONTRIBUTION": "spread_contribution",
+    "SECTOR_ALLOC_PCT": "sector_allocation_pct",
+    "COUNTRY_ALLOC_PCT": "country_allocation_pct",
 }
 
 

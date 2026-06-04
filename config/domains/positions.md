@@ -101,6 +101,17 @@
 | financing_rate | FIN_RATE | FINANCING_RT | DECIMAL(8,6) | ACTIVE | Financing/repo rate |
 | financing_cost | FIN_COST | FINANCING_AMT | DECIMAL(18,2) | ACTIVE | Financing cost |
 
+### Performance Attribution
+| Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
+|---|---|---|---|---|---|
+| return_contribution_1d | RETURN_CONTRIB_1D | RET_CONTRIB_1D | DECIMAL(8,6) | ACTIVE | 1-day return contribution |
+| return_contribution_mtd | RETURN_CONTRIB_MTD | RET_CONTRIB_MTD | DECIMAL(8,6) | ACTIVE | Month-to-date return contribution |
+| return_contribution_ytd | RETURN_CONTRIB_YTD | RET_CONTRIB_YTD | DECIMAL(8,6) | ACTIVE | Year-to-date return contribution |
+| duration_contribution | DUR_CONTRIBUTION | DUR_CONTRIB | DECIMAL(10,6) | ACTIVE | Duration contribution to return |
+| spread_contribution | SPREAD_CONTRIBUTION | SPREAD_CONTRIB | DECIMAL(10,6) | ACTIVE | Spread contribution to return |
+| sector_allocation_pct | SECTOR_ALLOC_PCT | SECTOR_ALLOC | DECIMAL(8,4) | ACTIVE | Sector allocation percentage |
+| country_allocation_pct | COUNTRY_ALLOC_PCT | COUNTRY_ALLOC | DECIMAL(8,4) | ACTIVE | Country allocation percentage |
+
 ### Source Tracking
 | Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
 |---|---|---|---|---|---|

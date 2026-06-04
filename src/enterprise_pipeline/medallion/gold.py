@@ -96,6 +96,14 @@ POSITIONS_GOLD_COLUMNS: list[str] = [
     # Regulatory
     "regulatory_book",
     "accounting_treatment",
+    # Performance attribution
+    "return_contribution_1d",
+    "return_contribution_mtd",
+    "return_contribution_ytd",
+    "duration_contribution",
+    "spread_contribution",
+    "sector_allocation_pct",
+    "country_allocation_pct",
 ]
 
 # Columns from the security silver table included in the gold output.
