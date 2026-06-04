@@ -76,6 +76,11 @@ RISK_FIELD_TYPES: dict[str, str] = {
     "implied_volatility": "decimal(8,4)",
     "historical_volatility_30d": "decimal(8,4)",
     "liquidity_score": "decimal(5,2)",
+    # Liquidity
+    "bid_ask_spread": "decimal(8,4)",
+    "avg_daily_volume": "bigint",
+    "days_to_liquidate": "decimal(8,2)",
+    "turnover_ratio": "decimal(8,4)",
 }
 
 # Explicit output column list — the silver table for risk analytics contains exactly these.
@@ -90,6 +95,7 @@ class RiskTransformer(DomainTransformer):
         df = self._normalize_price_source(df)
         df = self._validate_yields(df)
         df = self._validate_liquidity_score(df)
+        df = self._validate_liquidity_metrics(df)
         df = self._select_output_columns(df)
         return df
 
@@ -137,6 +143,17 @@ class RiskTransformer(DomainTransformer):
                     F.col("liquidity_score"),
                 ).otherwise(None),
             )
+        return df
+
+    @staticmethod
+    def _validate_liquidity_metrics(df: DataFrame) -> DataFrame:
+        """Ensure liquidity metrics are non-negative."""
+        for field in ["bid_ask_spread", "avg_daily_volume", "days_to_liquidate", "turnover_ratio"]:
+            if field in df.columns:
+                df = df.withColumn(
+                    field,
+                    F.when(F.col(field) >= 0, F.col(field)).otherwise(None),
+                )
         return df
 
     @staticmethod
