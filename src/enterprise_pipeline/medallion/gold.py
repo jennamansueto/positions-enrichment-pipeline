@@ -148,6 +148,7 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "next_put_date",
     "first_call_date",
     "first_put_date",
+    "par_call_date",
     "call_price",
     "put_price",
     "call_type",
