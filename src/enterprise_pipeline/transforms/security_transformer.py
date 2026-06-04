@@ -110,6 +110,14 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "tax_status": "string",
     # Timestamps
     "created_timestamp": "timestamp",
+    # ESG
+    "esg_score": "decimal(5,2)",
+    "environmental_score": "decimal(5,2)",
+    "social_score": "decimal(5,2)",
+    "governance_score": "decimal(5,2)",
+    "carbon_intensity": "decimal(10,2)",
+    "esg_controversy_flag": "boolean",
+    "green_bond_flag": "boolean",
 }
 
 # Explicit output column list — the silver table for security contains exactly these.
@@ -124,6 +132,8 @@ class SecurityTransformer(DomainTransformer):
         df = self._normalize_enums(df)
         df = self._validate_coupon_rate(df)
         df = self._validate_ratings(df)
+        df = self._validate_esg_scores(df)
+        df = self._validate_carbon_intensity(df)
         df = self._select_output_columns(df)
         return df
 
@@ -183,6 +193,33 @@ class SecurityTransformer(DomainTransformer):
         for field in rating_fields:
             if field in df.columns:
                 df = df.withColumn(field, F.upper(F.trim(F.col(field))))
+        return df
+
+    @staticmethod
+    def _validate_esg_scores(df: DataFrame) -> DataFrame:
+        """Ensure ESG scores are between 0 and 100."""
+        for field in ["esg_score", "environmental_score", "social_score", "governance_score"]:
+            if field in df.columns:
+                df = df.withColumn(
+                    field,
+                    F.when(
+                        (F.col(field) >= 0) & (F.col(field) <= 100),
+                        F.col(field),
+                    ).otherwise(None),
+                )
+        return df
+
+    @staticmethod
+    def _validate_carbon_intensity(df: DataFrame) -> DataFrame:
+        """Ensure carbon_intensity is non-negative."""
+        if "carbon_intensity" in df.columns:
+            df = df.withColumn(
+                "carbon_intensity",
+                F.when(
+                    F.col("carbon_intensity") >= 0,
+                    F.col("carbon_intensity"),
+                ).otherwise(None),
+            )
         return df
 
     @staticmethod

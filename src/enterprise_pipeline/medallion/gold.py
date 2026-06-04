@@ -200,6 +200,14 @@ SECURITY_GOLD_COLUMNS: list[str] = [
     "tax_status",
     # Timestamps
     "created_timestamp",
+    # ESG
+    "esg_score",
+    "environmental_score",
+    "social_score",
+    "governance_score",
+    "carbon_intensity",
+    "esg_controversy_flag",
+    "green_bond_flag",
 ]
 
 # Columns from the risk analytics silver table included in the gold output.
