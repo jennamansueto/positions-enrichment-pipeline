@@ -148,6 +148,14 @@
 | settlement_type | SETTLE_TYPE | STRING | ACTIVE | Settlement type (T+1, T+2, etc.) |
 | tax_status | TAX_STATUS | STRING | ACTIVE | TAXABLE, TAX_EXEMPT |
 
+### Dividend
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| ex_dividend_date | EX_DVD_DT | DATE | ACTIVE | Ex-dividend date |
+| dividend_record_date | DVD_RECORD_DT | DATE | ACTIVE | Dividend record date |
+| dividend_pay_date | DVD_PAY_DT | DATE | ACTIVE | Dividend payment date |
+| dividend_amount | DVD_AMT | DECIMAL(12,6) | ACTIVE | Dividend amount per share |
+
 ### Metadata
 | Target Field | Source Field | Type | Status | Description |
 |---|---|---|---|---|

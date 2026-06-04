@@ -87,6 +87,10 @@
     {"name": "trading_status", "type": "STRING", "nullable": true, "description": "ACTIVE, SUSPENDED, DELISTED", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.TRADING_STATUS"},
     {"name": "settlement_type", "type": "STRING", "nullable": true, "description": "Settlement type", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.SETTLE_TYPE"},
     {"name": "tax_status", "type": "STRING", "nullable": true, "description": "TAXABLE, TAX_EXEMPT", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.TAX_STATUS"},
+    {"name": "ex_dividend_date", "type": "DATE", "nullable": true, "description": "Ex-dividend date", "classification": "PII_NONE", "group": "dividend", "lineage": "security_master.sec_master.securities.EX_DVD_DT"},
+    {"name": "dividend_record_date", "type": "DATE", "nullable": true, "description": "Dividend record date", "classification": "PII_NONE", "group": "dividend", "lineage": "security_master.sec_master.securities.DVD_RECORD_DT"},
+    {"name": "dividend_pay_date", "type": "DATE", "nullable": true, "description": "Dividend payment date", "classification": "PII_NONE", "group": "dividend", "lineage": "security_master.sec_master.securities.DVD_PAY_DT"},
+    {"name": "dividend_amount", "type": "DECIMAL(12,6)", "nullable": true, "description": "Dividend amount per share", "classification": "PII_NONE", "group": "dividend", "lineage": "security_master.sec_master.securities.DVD_AMT"},
     {"name": "created_timestamp", "type": "TIMESTAMP", "nullable": true, "description": "Record creation time", "classification": "PII_NONE", "group": "metadata", "lineage": "security_master.sec_master.securities.CREATED_TS"}
   ]
 }
