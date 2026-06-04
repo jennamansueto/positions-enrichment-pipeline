@@ -99,6 +99,13 @@
 | scenario_down_100bps | SCEN_DN_100 | DECIMAL(18,2) | ACTIVE | P&L impact: rates -100bps |
 | scenario_up_200bps | SCEN_UP_200 | DECIMAL(18,2) | ACTIVE | P&L impact: rates +200bps |
 | scenario_credit_widen_100bps | SCEN_CRD_100 | DECIMAL(18,2) | ACTIVE | P&L impact: credit spreads +100bps |
+| scenario_down_200bps | SCEN_DN_200 | DECIMAL(18,2) | ACTIVE | P&L impact: rates -200bps |
+| scenario_up_300bps | SCEN_UP_300 | DECIMAL(18,2) | ACTIVE | P&L impact: rates +300bps |
+| scenario_equity_down_10pct | SCEN_EQ_DN_10 | DECIMAL(18,2) | ACTIVE | P&L impact: equities -10% |
+| scenario_equity_down_20pct | SCEN_EQ_DN_20 | DECIMAL(18,2) | ACTIVE | P&L impact: equities -20% |
+| scenario_credit_tight_50bps | SCEN_CREDIT_TIGHT_50 | DECIMAL(18,2) | ACTIVE | P&L impact: credit tightening 50bps |
+| scenario_vol_up_25pct | SCEN_VOL_UP_25 | DECIMAL(18,2) | ACTIVE | P&L impact: volatility +25% |
+| scenario_fx_shock_10pct | SCEN_FX_SHOCK_10 | DECIMAL(18,2) | ACTIVE | P&L impact: FX shock ±10% |
 
 ### Volatility & Liquidity
 | Target Field | Source Field | Type | Status | Description |

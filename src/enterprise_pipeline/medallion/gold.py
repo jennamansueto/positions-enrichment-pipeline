@@ -263,6 +263,13 @@ RISK_GOLD_COLUMNS: list[str] = [
     "scenario_down_100bps",
     "scenario_up_200bps",
     "scenario_credit_widen_100bps",
+    "scenario_down_200bps",
+    "scenario_up_300bps",
+    "scenario_equity_down_10pct",
+    "scenario_equity_down_20pct",
+    "scenario_credit_tight_50bps",
+    "scenario_vol_up_25pct",
+    "scenario_fx_shock_10pct",
     # Volatility
     "implied_volatility",
     "historical_volatility_30d",
