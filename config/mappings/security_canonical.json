@@ -87,6 +87,9 @@
     {"name": "trading_status", "type": "STRING", "nullable": true, "description": "ACTIVE, SUSPENDED, DELISTED", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.TRADING_STATUS"},
     {"name": "settlement_type", "type": "STRING", "nullable": true, "description": "Settlement type", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.SETTLE_TYPE"},
     {"name": "tax_status", "type": "STRING", "nullable": true, "description": "TAXABLE, TAX_EXEMPT", "classification": "PII_NONE", "group": "trading", "lineage": "security_master.sec_master.securities.TAX_STATUS"},
+    {"name": "esg_score", "type": "DECIMAL(8,2)", "nullable": true, "description": "Composite ESG score", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.ESG_SCORE"},
+    {"name": "carbon_intensity", "type": "DECIMAL(10,2)", "nullable": true, "description": "Carbon intensity", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.CARBON_INTENSITY"},
+    {"name": "esg_controversy_flag", "type": "BOOLEAN", "nullable": true, "description": "Whether there is an active ESG controversy", "classification": "PII_NONE", "group": "esg", "lineage": "security_master.sec_master.securities.ESG_CONTROVERSY_FLAG"},
     {"name": "created_timestamp", "type": "TIMESTAMP", "nullable": true, "description": "Record creation time", "classification": "PII_NONE", "group": "metadata", "lineage": "security_master.sec_master.securities.CREATED_TS"}
   ]
 }

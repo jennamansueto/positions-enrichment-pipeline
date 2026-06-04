@@ -148,6 +148,13 @@
 | settlement_type | SETTLE_TYPE | STRING | ACTIVE | Settlement type (T+1, T+2, etc.) |
 | tax_status | TAX_STATUS | STRING | ACTIVE | TAXABLE, TAX_EXEMPT |
 
+### ESG
+| Target Field | Source Field | Type | Status | Description |
+|---|---|---|---|---|
+| esg_score | ESG_SCORE | DECIMAL(8,2) | ACTIVE | Composite ESG score |
+| carbon_intensity | CARBON_INTENSITY | DECIMAL(10,2) | ACTIVE | Carbon intensity |
+| esg_controversy_flag | ESG_CONTROVERSY_FLAG | BOOLEAN | ACTIVE | Whether there is an active ESG controversy |
+
 ### Metadata
 | Target Field | Source Field | Type | Status | Description |
 |---|---|---|---|---|
