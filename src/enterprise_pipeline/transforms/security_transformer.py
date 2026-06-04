@@ -60,6 +60,7 @@ SECURITY_FIELD_TYPES: dict[str, str] = {
     "first_put_date": "date",
     "call_price": "decimal(12,6)",
     "put_price": "decimal(12,6)",
+    "make_whole_call_price": "decimal(12,6)",
     "call_type": "string",
     "is_callable": "boolean",
     "is_puttable": "boolean",
@@ -123,6 +124,7 @@ class SecurityTransformer(DomainTransformer):
         df = self._cast_types(df)
         df = self._normalize_enums(df)
         df = self._validate_coupon_rate(df)
+        df = self._validate_make_whole_call_price(df)
         df = self._validate_ratings(df)
         df = self._select_output_columns(df)
         return df
@@ -167,6 +169,19 @@ class SecurityTransformer(DomainTransformer):
                 F.when(
                     (F.col("coupon_rate") >= 0) & (F.col("coupon_rate") <= 100),
                     F.col("coupon_rate"),
+                ).otherwise(None),
+            )
+        return df
+
+    @staticmethod
+    def _validate_make_whole_call_price(df: DataFrame) -> DataFrame:
+        """Ensure make_whole_call_price is non-negative."""
+        if "make_whole_call_price" in df.columns:
+            df = df.withColumn(
+                "make_whole_call_price",
+                F.when(
+                    F.col("make_whole_call_price") >= 0,
+                    F.col("make_whole_call_price"),
                 ).otherwise(None),
             )
         return df
