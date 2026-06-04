@@ -78,6 +78,13 @@ ALPHA_COLUMN_MAP = {
     "IS_ACTIVE": "is_active",
     "REG_BOOK": "regulatory_book",
     "ACCT_TREATMENT": "accounting_treatment",
+    # Settlement & Reconciliation
+    "SETTLE_CCY": "settlement_currency",
+    "SETTLE_FX_RATE": "settlement_fx_rate",
+    "FAILED_SETTLE_FLAG": "failed_settlement_flag",
+    "RECON_STATUS": "reconciliation_status",
+    "LAST_RECON_DT": "last_reconciliation_date",
+    "AGING_DAYS": "days_since_trade",
 }
 
 

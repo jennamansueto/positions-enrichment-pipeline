@@ -116,3 +116,13 @@
 |---|---|---|---|---|---|
 | regulatory_book | REG_BOOK | REG_CLASSIFICATION | STRING | ACTIVE | Regulatory classification (TRADING/BANKING) |
 | accounting_treatment | ACCT_TREATMENT | ACCT_METHOD | STRING | ACTIVE | Accounting method (HFT, AFS, HTM) |
+
+### Settlement & Reconciliation
+| Target Field | Source Field (Alpha) | Source Field (Beta) | Type | Status | Description |
+|---|---|---|---|---|---|
+| settlement_currency | SETTLE_CCY | SETTLEMENT_CCY | STRING | ACTIVE | Settlement currency (ISO 4217) |
+| settlement_fx_rate | SETTLE_FX_RATE | SETTLEMENT_FX | DECIMAL(12,6) | ACTIVE | FX rate for settlement |
+| failed_settlement_flag | FAILED_SETTLE_FLAG | FAILED_SETTLE | BOOLEAN | ACTIVE | Whether settlement has failed |
+| reconciliation_status | RECON_STATUS | RECONCILIATION_STATUS | STRING | ACTIVE | Reconciliation status (RECONCILED, PENDING, BREAK) |
+| last_reconciliation_date | LAST_RECON_DT | LAST_RECON_DATE | DATE | ACTIVE | Date of last reconciliation |
+| days_since_trade | AGING_DAYS | DAYS_SINCE_TRADE | BIGINT | ACTIVE | Number of days since trade date (aging) |
