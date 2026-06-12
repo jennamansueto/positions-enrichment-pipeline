@@ -25,5 +25,3 @@ coverage/
 
 *.log
 .DS_Store
-
-uv.lock
